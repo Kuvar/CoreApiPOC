@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CoreApiPOC.Views.SignUpView" 
+             xmlns:viewModelBase="clr-namespace:CoreApiPOC.ViewModels.Base;assembly=CoreApiPOC"
+             xmlns:converters="clr-namespace:CoreApiPOC.Converters;assembly=CoreApiPOC"
+             xmlns:behaviors="clr-namespace:CoreApiPOC.Behaviors;assembly=CoreApiPOC"
+			 viewModelBase:ViewModelLocator.AutoWireViewModel="true" 
+             BackgroundColor="#E5E5E5">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter" />
+
+            <Style x:Key="TitleLabelStyle"
+                TargetType="{x:Type Label}">
+                <Setter Property="FontFamily"
+                    Value="{StaticResource MontserratRegular}" />
+                <Setter Property="FontAttributes"
+                    Value="Bold" />
+                <Setter Property="FontSize"
+                    Value="{StaticResource MediumSize}" />
+                <Setter Property="HorizontalOptions"
+                    Value="Center" />
+                <Setter Property="Margin"
+                    Value="0, 12" />
+            </Style>
+
+            <Style x:Key="HeaderLabelStyle"
+                TargetType="{x:Type Label}">
+                <Setter Property="FontFamily"
+                    Value="{StaticResource MontserratRegular}" />
+                <Setter Property="FontSize"
+                    Value="{StaticResource MidMediumSize}" />
+                <Setter Property="TextColor"
+                    Value="{StaticResource PrimaryDark}" />
+                <Setter Property="HorizontalOptions"
+                    Value="Start" />
+            </Style>
+
+            <Style x:Key="LoginButtonStyle"
+                TargetType="{x:Type Label}">
+                <Setter Property="FontFamily"
+                    Value="{StaticResource MontserratRegular}" />
+                <Setter Property="TextColor"
+                    Value="{StaticResource WhiteColor}" />
+                <Setter Property="HorizontalOptions"
+                    Value="Center" />
+                <Setter Property="VerticalOptions"
+                    Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid Padding="0" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="65"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0">
+                <ScrollView>
+                    <StackLayout Margin="24" VerticalOptions="FillAndExpand">
+                        <Label Text="User name" Style="{StaticResource HeaderLabelStyle}" />
+                        <Entry Text="{Binding UserName.Value, Mode=TwoWay}">
+                            <Entry.Style>
+                                <OnPlatform x:TypeArguments="Style">
+                                    <On Platform="iOS, Android" Value="{StaticResource EntryStyle}"/>
+                                    <On Platform="UWP, WinRT, WinPhone" Value="{StaticResource UwpEntryStyle}" />
+                                </OnPlatform>
+                            </Entry.Style>
+                            <Entry.Behaviors>
+                                <behaviors:EventToCommandBehavior EventName="TextChanged" Command="{Binding ValidateUserNameCommand}"/>
+                                <behaviors:EventToCommandBehavior EventName="Unfocused" Command="{Binding ValidateUserNameCommand}"/>
+                            </Entry.Behaviors>
+                            <Entry.Triggers>
+                                <DataTrigger TargetType="Entry" Binding="{Binding UserName.IsValid}" Value="False">
+                                    <Setter Property="behaviors:LineColorBehavior.LineColor" Value="{StaticResource ErrorColor}" />
+                                </DataTrigger>
+                            </Entry.Triggers>
+                        </Entry>
+                        <Label Text="{Binding UserName.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+
+                        <Label Text="Email" Style="{StaticResource HeaderLabelStyle}" />
+                        <Entry Text="{Binding Email.Value, Mode=TwoWay}">
+                            <Entry.Style>
+                                <OnPlatform x:TypeArguments="Style">
+                                    <On Platform="iOS, Android" Value="{StaticResource EntryStyle}"/>
+                                    <On Platform="UWP, WinRT, WinPhone" Value="{StaticResource UwpEntryStyle}" />
+                                </OnPlatform>
+                            </Entry.Style>
+                            <Entry.Behaviors>
+                                <behaviors:EventToCommandBehavior EventName="TextChanged" Command="{Binding ValidateEmailCommand}"/>
+                                <behaviors:EventToCommandBehavior EventName="Unfocused" Command="{Binding EmailUnfocusedCommand}"/>
+                            </Entry.Behaviors>
+                            <Entry.Triggers>
+                                <DataTrigger TargetType="Entry" Binding="{Binding Email.IsValid}" Value="False">
+                                    <Setter Property="behaviors:LineColorBehavior.LineColor" Value="{StaticResource ErrorColor}" />
+                                </DataTrigger>
+                            </Entry.Triggers>
+                        </Entry>
+                        <Label Text="{Binding Email.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+
+                        <Label Text="Password" Style="{StaticResource HeaderLabelStyle}"/>
+                        <Frame Padding="7,12,7,2" OutlineColor="Transparent" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                            <Entry IsPassword="True" Text="{Binding Password.Value, Mode=TwoWay}">
+                                <Entry.Style>
+                                    <OnPlatform x:TypeArguments="Style">
+                                        <On Platform="iOS, Android" Value="{StaticResource EntryStyle}" />
+                                        <On Platform="UWP, WinRT, WinPhone" Value="{StaticResource UwpEntryStyle}" />
+                                    </OnPlatform>
+                                </Entry.Style>
+                                <Entry.Behaviors>
+                                    <behaviors:EventToCommandBehavior EventName="TextChanged" Command="{Binding ValidatePasswordCommand}" />
+                                </Entry.Behaviors>
+                                <Entry.Triggers>
+                                    <DataTrigger TargetType="Entry" Binding="{Binding Password.IsValid}" Value="False">
+                                        <Setter Property="behaviors:LineColorBehavior.LineColor" Value="{StaticResource ErrorColor}" />
+                                    </DataTrigger>
+                                </Entry.Triggers>
+                            </Entry>
+                        </Frame>
+                        <Label Text="{Binding Password.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+
+                        <Label Text="Confirm Password" Style="{StaticResource HeaderLabelStyle}"/>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

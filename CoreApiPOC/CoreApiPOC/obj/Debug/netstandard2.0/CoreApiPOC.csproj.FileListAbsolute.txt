@@ -1,0 +1,14 @@
+C:\Users\KUVAR\source\repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\bin\Debug\netstandard2.0\CoreApiPOC.deps.json
+C:\Users\KUVAR\source\repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\bin\Debug\netstandard2.0\CoreApiPOC.dll
+C:\Users\KUVAR\source\repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\bin\Debug\netstandard2.0\CoreApiPOC.pdb
+C:\Users\KUVAR\source\repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\netstandard2.0\CoreApiPOC.csprojResolveAssemblyReference.cache
+C:\Users\KUVAR\source\repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\netstandard2.0\CoreApiPOC.csproj.CoreCompileInputs.cache
+C:\Users\KUVAR\source\repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\netstandard2.0\CoreApiPOC.App.xaml.g.cs
+C:\Users\KUVAR\source\repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\netstandard2.0\CoreApiPOC.MainPage.xaml.g.cs
+C:\Users\KUVAR\source\repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\netstandard2.0\CoreApiPOC.Views.CustomNavigationView.xaml.g.cs
+C:\Users\KUVAR\source\repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\netstandard2.0\CoreApiPOC.Views.LoginView.xaml.g.cs
+C:\Users\KUVAR\source\repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\netstandard2.0\CoreApiPOC.Views.RegistrationView.xaml.g.cs
+C:\Users\KUVAR\source\repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\netstandard2.0\CoreApiPOC.AssemblyInfoInputs.cache
+C:\Users\KUVAR\source\repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\netstandard2.0\CoreApiPOC.AssemblyInfo.cs
+C:\Users\KUVAR\source\repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\netstandard2.0\CoreApiPOC.dll
+C:\Users\KUVAR\source\repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\netstandard2.0\CoreApiPOC.pdb

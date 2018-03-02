@@ -11,7 +11,7 @@
 namespace CoreApiPOC.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("E:\\Projects\\CoreApiPOC\\CoreApiPOC\\CoreApiPOC\\Views\\MainViewMaster.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("E:\\Source\\Repos\\CoreApiPOC\\CoreApiPOC\\CoreApiPOC\\Views\\MainViewMaster.xaml")]
     public partial class MainViewMaster : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

@@ -188,7 +188,7 @@ namespace CoreApiPOC.ViewModels
         }
 
         public ICommand UpdateUserInfoCommand => new Command(async () => await UpdateUserInfoAsync());
-        public ICommand ChangePasswordCommand => new Command(() => ChangePasswordPageAsync());
+        public ICommand ChangePasswordCommand => new Command(() => ChangePasswordPage());
 
         private void ChangePasswordPage()
         {

@@ -11,7 +11,7 @@
 namespace CoreApiPOC.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("E:\\Projects\\CoreApiPOC\\CoreApiPOC\\CoreApiPOC\\Views\\LoginView.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("E:\\Source\\Repos\\CoreApiPOC\\CoreApiPOC\\CoreApiPOC\\Views\\LoginView.xaml")]
     public partial class LoginView : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

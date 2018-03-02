@@ -11,7 +11,7 @@
 namespace CoreApiPOC {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("E:\\Projects\\CoreApiPOC\\CoreApiPOC\\CoreApiPOC\\App.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("E:\\Source\\Repos\\CoreApiPOC\\CoreApiPOC\\CoreApiPOC\\App.xaml")]
     public partial class App : global::Xamarin.Forms.Application {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

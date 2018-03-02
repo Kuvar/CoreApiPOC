@@ -2,7 +2,10 @@
 {
     using CoreApiPOC.Validations;
     using CoreApiPOC.ViewModels.Base;
+    using Models;
+    using Services;
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Threading.Tasks;
     using System.Windows.Input;
@@ -10,6 +13,20 @@
 
     public class LoginViewModel : ViewModelBase
     {
+        private bool _isValid;
+        public bool IsValid
+        {
+            get
+            {
+                return _isValid;
+            }
+            set
+            {
+                _isValid = value;
+                RaisePropertyChanged(() => IsValid);
+            }
+        }
+
         private ValidatableObject<string> _userName;
         public ValidatableObject<string> UserName
         {
@@ -38,49 +55,6 @@
             }
         }
 
-        private bool _isMock;
-        public bool IsMock
-        {
-            get
-            {
-                return _isMock;
-            }
-            set
-            {
-                _isMock = value;
-                RaisePropertyChanged(() => IsMock);
-            }
-        }
-
-        private bool _isValid;
-        public bool IsValid
-        {
-            get
-            {
-                return _isValid;
-            }
-            set
-            {
-                _isValid = value;
-                RaisePropertyChanged(() => IsValid);
-            }
-        }
-
-        private bool _isLogin;
-        public bool IsLogin
-        {
-            get
-            {
-                return _isLogin;
-            }
-            set
-            {
-                _isLogin = value;
-                RaisePropertyChanged(() => IsLogin);
-            }
-        }
-
-
         public LoginViewModel()
         {
             _userName = new ValidatableObject<string>();
@@ -89,24 +63,53 @@
             AddValidations();
         }
 
-        public ICommand MockSignInCommand => new Command(async () => await MockSignInAsync());
+        public ICommand GoToSignupCommand => new Command(async () => await SignUpAsync());
+
+        public ICommand MockSignInCommand => new Command(async () => await MockSignInAsync1());
 
         public ICommand ValidateUserNameCommand => new Command(() => ValidateUserName());
+
+        public ICommand ValidatePasswordCommand => new Command(() => ValidatePassword());
 
         private async Task MockSignInAsync()
         {
             IsBusy = true;
             IsValid = true;
             bool isValid = Validate();
-            bool isAuthenticated = false;
 
             if (isValid)
             {
                 try
                 {
-                    await Task.Delay(1000);
+                    UserDto obj = new UserDto { Username = UserName.Value, Password = Password.Value };
+                    await ServiceHandler.AuthAsync<AuthResponse, UserDto>(obj).ContinueWith((t) =>
+                    {
+                        if (t.IsFaulted)
+                        {
+                            Application.Current.MainPage.DisplayAlert("Error!!!", "Something Went Wrong", "OK");
+                        }
+                        else
+                        {
+                           
+                            if (t.Result != null)
+                            {
+                                var data = t.Result;
 
-                    isAuthenticated = true;
+                                App.Id = data.id;
+                                App.Name = data.username;
+                                App.Email = data.email;
+                                App.IsAdmin = data.isAdmin;
+                                App.Token = data.token;
+                                NavigationService.NavigateToAsync<MainViewModel>();
+                                //NavigationService.RemoveLastFromBackStackAsync();
+                            }
+                            else
+                            {
+                                Application.Current.MainPage.DisplayAlert("Fail!!!", "Invalid username or password", "OK");
+                            }
+                        }
+                    }, TaskScheduler.FromCurrentSynchronizationContext());
+
                 }
                 catch (Exception ex)
                 {
@@ -118,11 +121,44 @@
                 IsValid = false;
             }
 
-            if (isAuthenticated)
+            IsBusy = false;
+        }
+
+        private async Task SignUpAsync()
+        {
+            IsBusy = true;
+
+            await NavigationService.NavigateToAsync<SignUpViewModel>();
+
+            IsBusy = false;
+        }
+
+        private async Task GetAllUsers()
+        {
+            await ServiceHandler.GetDataAsync<List<UserDto>>(string.Empty).ContinueWith((t) =>
             {
-                await NavigationService.NavigateToAsync<SignUpViewModel>();
-                await NavigationService.RemoveLastFromBackStackAsync();
-            }
+                if (t.IsFaulted)
+                {
+                    // Application.Current.MainPage.DisplayAlert("", t.Exception.Message, "OK");
+                }
+                else
+                {
+                    var data = t.Result;
+                }
+            });
+        }
+
+        private async Task MockSignInAsync1()
+        {
+            IsBusy = true;
+            IsValid = true;
+            bool isValid = Validate();
+            //bool isAuthenticated = false;
+
+            await NavigationService.NavigateToAsync<MainViewModel>();
+            //await NavigationService.RemoveLastFromBackStackAsync();
+
+            //await App.Navigation.PushModalAsync(new MainView());
 
             IsBusy = false;
         }
@@ -150,5 +186,7 @@
         {
             return _password.Validate();
         }
+
+
     }
 }

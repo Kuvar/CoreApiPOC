@@ -4,15 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{77F687C1-7646-47A1-B9D8-23E7EA98B0BA}</ProjectGuid>
+    <ProjectGuid>{D60E56C7-76D5-44F4-A38C-860B8D230F10}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CoreApiPOC.UWP</RootNamespace>
     <AssemblyName>CoreApiPOC.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.16299.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
+    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
@@ -89,6 +89,10 @@
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -148,18 +152,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Acr.UserDialogs">
-      <Version>7.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="Autofac">
-      <Version>4.6.2</Version>
-    </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.1" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CoreApiPOC\CoreApiPOC.csproj">
-      <Project>{BD79425B-941B-4D64-87DA-766F81194BC5}</Project>
+      <Project>{fa86f1ed-004b-424c-a4ab-64d5823daa26}</Project>
       <Name>CoreApiPOC</Name>
     </ProjectReference>
   </ItemGroup>

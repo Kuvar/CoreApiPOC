@@ -6,9 +6,9 @@
     <Application.Resources>
         <ResourceDictionary>
             <!-- COLORS -->
-            <Color x:Key="PrimaryDark">#7200CA</Color>
-            <Color x:Key="PrimaryLight">#E254FF</Color>
-            <Color x:Key="NavigationColor">#AA00FF</Color>
+            <Color x:Key="PrimaryDark">#1976D2</Color>
+            <Color x:Key="PrimaryLight">#2196F3</Color>
+            <Color x:Key="NavigationColor">#2196F3</Color>
             <Color x:Key="WhiteColor">#ffffff</Color>
             <Color x:Key="BlackColor">#000000</Color>
             <Color x:Key="BackgroundColor">#F4F6FA</Color>
@@ -16,13 +16,15 @@
             <Color x:Key="LightGreenColor">#83D01B</Color>
             <Color x:Key="GreenColor">#008B00</Color>
             <Color x:Key="DarkGreenColor">#00857D</Color>
-            <Color x:Key="GrayColor">#e2e2e2</Color>
+            <Color x:Key="GrayColor">#495057</Color>
             <Color x:Key="ErrorColor">#ff5252</Color>
             <Color x:Key="TextColor">#757575</Color>
+            <Color x:Key="RedDarkColor">#a94442</Color>
             <Color x:Key="InverseTextColor">#FFFFFF</Color>
             <Color x:Key="LightTextColor">#979797</Color>
             <Color x:Key="iOSDefaultTintColor">#007aff</Color>
             <Color x:Key="SeparatorLineColor">#CCCCCC</Color>
+            <Color x:Key="BlueLinkColor">#0068FC</Color>
             <Color x:Key="AndroidDefaultButtonClassBackgroundColor">#C9C9C9</Color>
             <Color x:Key="iOSDefaultButtonClassBackgroundColor">Transparent</Color>
             <Color x:Key="AndroidDefaultButtonClassBorderColor">Transparent</Color>
@@ -185,9 +187,9 @@
                 <Setter Property="TextColor"
                         Value="{StaticResource BlackColor}" />
                 <Setter Property="PlaceholderColor"
-                        Value="{StaticResource BlackColor}" />
+                        Value="{StaticResource GrayColor}" />
                 <Setter Property="FontSize"
-                        Value="{StaticResource LargeSize}" />
+                        Value="{StaticResource MediumSize}" />
                 <Setter Property="HorizontalOptions"
                         Value="FillAndExpand" />
                 <Setter Property="FontAttributes"
@@ -199,7 +201,7 @@
                 <Setter Property="behaviors:LineColorBehavior.ApplyLineColor"
                         Value="True" />
                 <Setter Property="behaviors:LineColorBehavior.LineColor"
-                        Value="{StaticResource BlackColor}" />
+                        Value="{StaticResource WhiteColor}" />
                 <Style.Triggers>
                     <Trigger TargetType="Entry"
                              Property="IsFocused" 
@@ -216,9 +218,9 @@
                 <Setter Property="TextColor"
                         Value="{StaticResource BlackColor}" />
                 <Setter Property="PlaceholderColor"
-                        Value="{StaticResource BlackColor}" />
+                        Value="{StaticResource GrayColor}" />
                 <Setter Property="FontSize"
-                        Value="{StaticResource LargeSize}" />
+                        Value="{StaticResource MediumSize}" />
                 <Setter Property="HorizontalOptions"                      
                         Value="FillAndExpand" />
                 <Setter Property="FontAttributes"
@@ -237,7 +239,7 @@
                        Value="True">
                         <Setter Property="Opacity" Value="1" />
                         <Setter Property="behaviors:LineColorBehavior.LineColor"                        
-                                Value="{StaticResource GreenColor}" />
+                                Value="{StaticResource WhiteColor}" />
                     </Trigger>
                 </Style.Triggers>
             </Style>

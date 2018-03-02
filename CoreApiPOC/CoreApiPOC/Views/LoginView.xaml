@@ -5,12 +5,16 @@
              xmlns:viewModelBase="clr-namespace:CoreApiPOC.ViewModels.Base;assembly=CoreApiPOC"
              xmlns:converters="clr-namespace:CoreApiPOC.Converters;assembly=CoreApiPOC"
              xmlns:behaviors="clr-namespace:CoreApiPOC.Behaviors;assembly=CoreApiPOC"
-			 viewModelBase:ViewModelLocator.AutoWireViewModel="true" 
-             BackgroundColor="#E5E5E5">
+			 viewModelBase:ViewModelLocator.AutoWireViewModel="true"
+             NavigationPage.HasNavigationBar="False" 
+             NavigationPage.HasBackButton="False" 
+             BackgroundColor="#FFFFFF">
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter" />
-            
+            <converters:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+
             <Style x:Key="TitleLabelStyle"
                 TargetType="{x:Type Label}">
                 <Setter Property="FontFamily"
@@ -18,11 +22,11 @@
                 <Setter Property="FontAttributes"
                     Value="Bold" />
                 <Setter Property="FontSize"
-                    Value="{StaticResource MediumSize}" />
+                    Value="{StaticResource LargeSize}" />
                 <Setter Property="HorizontalOptions"
                     Value="Center" />
                 <Setter Property="Margin"
-                    Value="0, 12" />
+                    Value="0,0,0,5" />
             </Style>
 
             <Style x:Key="HeaderLabelStyle"
@@ -32,7 +36,7 @@
                 <Setter Property="FontSize"
                     Value="{StaticResource MidMediumSize}" />
                 <Setter Property="TextColor"
-                    Value="{StaticResource PrimaryDark}" />
+                    Value="{StaticResource TextColor}" />
                 <Setter Property="HorizontalOptions"
                     Value="Start" />
             </Style>
@@ -58,84 +62,77 @@
             </Grid.RowDefinitions>
             <StackLayout
                 Grid.Row="0"
-                Margin="20" VerticalOptions="CenterAndExpand" >
+                Padding="20" VerticalOptions="CenterAndExpand" >
                 <ScrollView>
-                    <Label
-                  Text="User name"
-                  Style="{StaticResource HeaderLabelStyle}" />
-                    <Frame Padding="7,12,7,2" OutlineColor="Transparent" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
-                        <Entry Text="{Binding UserName.Value, Mode=TwoWay}" >
-                            <Entry.Style>
-                                <OnPlatform x:TypeArguments="Style">
-                                    <On Platform="iOS, Android" Value="{StaticResource EntryStyle}" />
-                                    <On Platform="UWP, WinRT, WinPhone" Value="{StaticResource UwpEntryStyle}" />
-                                </OnPlatform>
-                            </Entry.Style>
-                            <Entry.Behaviors>
-                                <behaviors:EventToCommandBehavior
-							EventName="TextChanged"
-							Command="{Binding ValidateUserNameCommand}" />
-                            </Entry.Behaviors>
-                            <Entry.Triggers>
-                                <DataTrigger 
-							TargetType="Entry"
-							Binding="{Binding UserName.IsValid}"
-							Value="False">
-                                    <Setter Property="behaviors:LineColorBehavior.LineColor" Value="{StaticResource ErrorColor}" />
-                                </DataTrigger>
-                            </Entry.Triggers>
-                        </Entry>
-                    </Frame>
-                    <Label 
-					Text="{Binding UserName.Errors, Converter={StaticResource FirstValidationErrorConverter}"
-					Style="{StaticResource ValidationErrorLabelStyle}" />
-                    <Label
-                  Text="Password"
-                  Style="{StaticResource HeaderLabelStyle}"/>
-                    <Frame Padding="7,12,7,2" OutlineColor="Transparent" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
-                        <Entry 
-                      IsPassword="True"
-                      Text="{Binding Password.Value, Mode=TwoWay}">
-                            <Entry.Style>
-                                <OnPlatform x:TypeArguments="Style">
-                                    <On Platform="iOS, Android" Value="{StaticResource EntryStyle}" />
-                                    <On Platform="UWP, WinRT, WinPhone" Value="{StaticResource UwpEntryStyle}" />
-                                </OnPlatform>
-                            </Entry.Style>
-                            <Entry.Behaviors>
-                                <behaviors:EventToCommandBehavior
-							EventName="TextChanged"
-							Command="{Binding ValidatePasswordCommand}" />
-                            </Entry.Behaviors>
-                            <Entry.Triggers>
-                                <DataTrigger 
-							TargetType="Entry"
-							Binding="{Binding Password.IsValid}"
-							Value="False">
-                                    <Setter Property="behaviors:LineColorBehavior.LineColor" Value="{StaticResource ErrorColor}" />
-                                </DataTrigger>
-                            </Entry.Triggers>
-                        </Entry>
-                    </Frame>
-                    <Label 
-					Text="{Binding Password.Errors, Converter={StaticResource FirstValidationErrorConverter}"
-					Style="{StaticResource ValidationErrorLabelStyle}" />
-                    <Grid Padding="0" RowSpacing="0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Row="0" Grid.Column="0" Text="Need an account? " TextColor="{StaticResource PrimaryDark}" FontSize="18" HeightRequest="40" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
-                        <Button Grid.Row="0" Grid.Column="1" Text="Sign Up Now" TextColor="#0447FF" FontSize="16" HeightRequest="40" FontAttributes="Bold" BackgroundColor="Transparent" Command="{Binding GoToSignupCommand}" HorizontalOptions="EndAndExpand"/>
-                    </Grid>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Please Login" Style="{StaticResource TitleLabelStyle}"></Label>
+                        
+                        <Frame Padding="0,0,7,0" OutlineColor="Transparent" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Horizontal">
+                                <BoxView WidthRequest="5" VerticalOptions="FillAndExpand" Color="{StaticResource RedDarkColor}"></BoxView>
+                                <Entry Text="{Binding UserName.Value, Mode=TwoWay}" Placeholder="Username" Margin="0,5,0,0">
+                                    <Entry.Style>
+                                        <OnPlatform x:TypeArguments="Style">
+                                            <On Platform="iOS, Android" Value="{StaticResource EntryStyle}" />
+                                            <On Platform="UWP, WinRT, WinPhone" Value="{StaticResource UwpEntryStyle}" />
+                                        </OnPlatform>
+                                    </Entry.Style>
+                                    <Entry.Behaviors>
+                                        <behaviors:EventToCommandBehavior EventName="TextChanged" Command="{Binding ValidateUserNameCommand}" />
+                                        <behaviors:EventToCommandBehavior EventName="Unfocused" Command="{Binding ValidateUserNameCommand}"/>
+                                    </Entry.Behaviors>
+                                    <Entry.Triggers>
+                                        <DataTrigger TargetType="Entry" Binding="{Binding UserName.IsValid}" Value="False">
+                                            <Setter Property="behaviors:LineColorBehavior.LineColor" Value="{StaticResource ErrorColor}" />
+                                        </DataTrigger>
+                                    </Entry.Triggers>
+                                </Entry>
+                            </StackLayout>
+                        </Frame>
+                        <Label IsVisible="{Binding UserName.IsValid, Converter={StaticResource InverseBooleanConverter}}" Text="{Binding UserName.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                        
+                        <Frame Padding="0,0,7,0" OutlineColor="Transparent" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Horizontal">
+                                <BoxView WidthRequest="5" VerticalOptions="FillAndExpand" Color="{StaticResource RedDarkColor}"></BoxView>
+                                <Entry IsPassword="True" Text="{Binding Password.Value, Mode=TwoWay}" Placeholder="Password" Margin="0,5,0,0">
+                                    <Entry.Style>
+                                        <OnPlatform x:TypeArguments="Style">
+                                            <On Platform="iOS, Android" Value="{StaticResource EntryStyle}" />
+                                            <On Platform="UWP, WinRT, WinPhone" Value="{StaticResource UwpEntryStyle}" />
+                                        </OnPlatform>
+                                    </Entry.Style>
+                                    <Entry.Behaviors>
+                                        <behaviors:EventToCommandBehavior EventName="TextChanged" Command="{Binding ValidatePasswordCommand}" />
+                                        <behaviors:EventToCommandBehavior EventName="Unfocused" Command="{Binding ValidatePasswordCommand}"/>
+                                    </Entry.Behaviors>
+                                    <Entry.Triggers>
+                                        <DataTrigger TargetType="Entry" Binding="{Binding Password.IsValid}" Value="False">
+                                            <Setter Property="behaviors:LineColorBehavior.LineColor" Value="{StaticResource ErrorColor}" />
+                                        </DataTrigger>
+                                    </Entry.Triggers>
+                                </Entry>
+                            </StackLayout>
+                            
+                        </Frame>
+                        <Label IsVisible="{Binding Password.IsValid, Converter={StaticResource InverseBooleanConverter}}" Text="{Binding Password.Errors, Converter={StaticResource FirstValidationErrorConverter}" Style="{StaticResource ValidationErrorLabelStyle}" />
+                        
+                        <Grid Padding="0" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Text="Need an account? " TextColor="{StaticResource PrimaryDark}" FontSize="18" HeightRequest="40" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+                            <Button Grid.Row="0" Grid.Column="1" Text="Sign Up Now" TextColor="#0447FF" FontSize="16" HeightRequest="40" FontAttributes="Bold" BackgroundColor="Transparent" Command="{Binding GoToSignupCommand}" HorizontalOptions="EndAndExpand"/>
+                        </Grid>
+                    </StackLayout>
                 </ScrollView>
             </StackLayout>
             <Grid
                 Grid.Row="1"
-                BackgroundColor="{StaticResource GreenColor}"
+                BackgroundColor="#A9A9A9"
                 Padding="0"
                 ColumnSpacing="0"
                 RowSpacing="0">

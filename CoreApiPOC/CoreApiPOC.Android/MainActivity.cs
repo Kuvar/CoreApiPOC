@@ -22,10 +22,10 @@ namespace CoreApiPOC.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
 
-            Window window = this.Window;
-            window.ClearFlags(WindowManagerFlags.TranslucentStatus);
-            window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
-            window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#7200CA"));
+            //Window window = this.Window;
+            //window.ClearFlags(WindowManagerFlags.TranslucentStatus);
+            //window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
+            //window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#1976D2"));
         }
     }
 }

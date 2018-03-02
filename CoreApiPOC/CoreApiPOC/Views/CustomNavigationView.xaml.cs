@@ -9,8 +9,8 @@ using Xamarin.Forms.Xaml;
 
 namespace CoreApiPOC.Views
 {
-	
-	public partial class CustomNavigationView : NavigationPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class CustomNavigationView : NavigationPage
     {
         public CustomNavigationView() : base()
         {

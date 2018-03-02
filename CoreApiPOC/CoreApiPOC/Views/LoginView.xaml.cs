@@ -9,12 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace CoreApiPOC.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LoginView : ContentPage
-	{
-		public LoginView ()
-		{
-			InitializeComponent ();
-		}
-	}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class LoginView : ContentPage
+    {
+        public LoginView()
+        {
+            InitializeComponent();
+        }
+    }
 }

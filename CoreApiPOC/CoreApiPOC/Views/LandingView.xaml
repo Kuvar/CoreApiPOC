@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModelBase="clr-namespace:CoreApiPOC.ViewModels.Base;assembly=CoreApiPOC"
+             NavigationPage.HasBackButton="False"
+             viewModelBase:ViewModelLocator.AutoWireViewModel="true"
+             x:Class="CoreApiPOC.Views.LandingView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="TitleLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="{StaticResource MidMediumSize}" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+                <Setter Property="Margin" Value="0,3,0,3" />
+            </Style>
+
+            <Style x:Key="TextLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
+                <Setter Property="FontSize" Value="{StaticResource LittleSize}" />
+                <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="Margin" Value="0,0,0,0" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical" Spacing="20" Padding="10,20">
+                <StackLayout Orientation="Vertical" Padding="0" Spacing="0">
+                    <Label Text="Subheading 1" 
+                       VerticalOptions="Start" 
+                       HorizontalOptions="StartAndExpand" 
+                       Style="{StaticResource TitleLabelStyle}" />
+                    <Label 
+                    Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales pretium diam in aliquam. Nulla eget purus nec dolor blandit elementum et in quam." 
+                    HorizontalOptions="StartAndExpand" 
+                    Style="{StaticResource TextLabelStyle}" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="0" Spacing="0">
+                    <Label Text="Subheading 2" 
+                       VerticalOptions="Start" 
+                       HorizontalOptions="StartAndExpand" 
+                       Style="{StaticResource TitleLabelStyle}" />
+                    <Label 
+                    Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales pretium diam in aliquam. Nulla eget purus nec dolor blandit elementum et in quam." 
+                    HorizontalOptions="StartAndExpand" 
+                    Style="{StaticResource TextLabelStyle}" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="0" Spacing="0">
+                    <Label Text="Subheading 3" 
+                       VerticalOptions="Start" 
+                       HorizontalOptions="StartAndExpand" 
+                       Style="{StaticResource TitleLabelStyle}" />
+                    <Label 
+                    Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales pretium diam in aliquam. Nulla eget purus nec dolor blandit elementum et in quam." 
+                    HorizontalOptions="StartAndExpand" 
+                    Style="{StaticResource TextLabelStyle}" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="0" Spacing="0">
+                    <Label Text="Subheading 4" 
+                       VerticalOptions="Start" 
+                       HorizontalOptions="StartAndExpand" 
+                       Style="{StaticResource TitleLabelStyle}" />
+                    <Label 
+                    Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales pretium diam in aliquam. Nulla eget purus nec dolor blandit elementum et in quam." 
+                    HorizontalOptions="StartAndExpand" 
+                    Style="{StaticResource TextLabelStyle}" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="0" Spacing="0">
+                    <Label Text="Subheading 5" 
+                       VerticalOptions="Start" 
+                       HorizontalOptions="StartAndExpand" 
+                       Style="{StaticResource TitleLabelStyle}" />
+                    <Label 
+                    Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales pretium diam in aliquam. Nulla eget purus nec dolor blandit elementum et in quam." 
+                    HorizontalOptions="StartAndExpand" 
+                    Style="{StaticResource TextLabelStyle}" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="0" Spacing="0">
+                    <Label Text="Subheading 6" 
+                       VerticalOptions="Start" 
+                       HorizontalOptions="StartAndExpand" 
+                       Style="{StaticResource TitleLabelStyle}" />
+                    <Label 
+                    Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales pretium diam in aliquam. Nulla eget purus nec dolor blandit elementum et in quam." 
+                    HorizontalOptions="StartAndExpand" 
+                    Style="{StaticResource TextLabelStyle}" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -6,7 +6,8 @@
     using System.Reflection;
     using Xamarin.Forms;
 
-    using CoreApiPOC.Services;
+    using Services;
+    using System.Diagnostics;
 
     public static class ViewModelLocator
     {
@@ -34,6 +35,12 @@
             // View models
             //builder.RegisterType<MainViewModel>();
             builder.RegisterType<LoginViewModel>();
+            builder.RegisterType<SignUpViewModel>();
+            builder.RegisterType<MainViewModel>();
+            builder.RegisterType<MasterViewModel>();
+            builder.RegisterType<LandingViewModel>();
+            builder.RegisterType<EditUserInfoViewModel>();
+
 
             // Services
             builder.RegisterType<NavigationService>().As<INavigationService>().SingleInstance();
@@ -77,7 +84,7 @@
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace CoreApiPOC.Services
 {
-    using CoreApiPOC.ViewModels;
+    using ViewModels;
     using CoreApiPOC.Views;
     using CoreApiPOC.ViewModels.Base;
     using System;

@@ -1,0 +1,2 @@
+E:\Projects\CoreApiPOC\CoreApiPOC\CoreApiPOC.UWP\CoreApiPOC.UWP.csproj;x86
+E:\Projects\CoreApiPOC\CoreApiPOC\CoreApiPOC\CoreApiPOC.csproj;neutral

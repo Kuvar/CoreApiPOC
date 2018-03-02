@@ -1,21 +1,27 @@
-﻿using CoreApiPOC.Services;
-using CoreApiPOC.ViewModels.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-
-namespace CoreApiPOC
+﻿namespace CoreApiPOC
 {
-	public partial class App : Application
-	{
-        public bool UseMockServices { get; set; }
+    using Services;
+    using ViewModels.Base;
+    using System.Threading.Tasks;
+    using Xamarin.Forms;
 
-        public App ()
-		{
-			InitializeComponent();
+    public partial class App : Application
+    {
+        public bool UseMockServices { get; set; }
+        public static new int Id { get; set; }
+        public static string Name { get; set; }
+        public static string Email { get; set; }
+        public static bool IsAdmin { get; set; }
+        public static string Token { get; set; }
+
+        public App()
+        {
+            InitializeComponent();
+            Id = 0;
+            Name = string.Empty;
+            Email = string.Empty;
+            IsAdmin = false;
+            Token = string.Empty;
 
             //MainPage = new CoreApiPOC.MainPage();
             InitApp();
@@ -49,14 +55,14 @@ namespace CoreApiPOC
             base.OnResume();
         }
 
-        protected override void OnSleep ()
-		{
-			// Handle when your app sleeps
-		}
+        protected override void OnSleep()
+        {
+            // Handle when your app sleeps
+        }
 
-		protected override void OnResume ()
-		{
-			// Handle when your app resumes
-		}
-	}
+        protected override void OnResume()
+        {
+            // Handle when your app resumes
+        }
+    }
 }

@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="ec0cc741-fd3e-485c-81be-68815c480690"
-    Publisher="CN=Pierce Boggan"
+    Name="e175c256-0442-4430-8c9b-cc2c9d671f06"
+    Publisher="CN=pankaj"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="e175c256-0442-4430-8c9b-cc2c9d671f06" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>CoreApiPOC.UWP</DisplayName>
-    <PublisherDisplayName>Pierce Boggan</PublisherDisplayName>
+    <PublisherDisplayName>pankaj</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

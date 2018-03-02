@@ -24,7 +24,7 @@ namespace CoreApiPOC.ViewModels
                  new MasterPageItem { Id = 0, Title = "Home", TargetType = typeof(LandingView) },
                  new MasterPageItem { Id = 1, Title = "Users" },
                  new MasterPageItem { Id = 2, Title = "Edit User Info", TargetType = typeof(EditUserInfoView)  },
-                 new MasterPageItem { Id = 3, Title = "Logout"}
+                 new MasterPageItem { Id = 3, Title = "Logout", TargetType = typeof(LogoutView)}
             });
 
             if (!App.IsAdmin)

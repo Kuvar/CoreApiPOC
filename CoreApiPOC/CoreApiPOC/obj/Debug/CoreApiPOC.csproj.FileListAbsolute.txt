@@ -78,3 +78,4 @@ E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\bin\Debug\Xamarin.Forms.Core.pd
 E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\bin\Debug\Xamarin.Forms.Core.xml
 E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\bin\Debug\Xamarin.Forms.Xaml.pdb
 E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\bin\Debug\Xamarin.Forms.Xaml.xml
+E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\CoreApiPOC.Views.LogoutView.xaml.g.cs

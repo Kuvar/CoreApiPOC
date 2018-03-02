@@ -4,10 +4,7 @@ using CoreApiPOC.Validations;
 using CoreApiPOC.ViewModels.Base;
 using CoreApiPOC.Views;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -195,7 +192,7 @@ namespace CoreApiPOC.ViewModels
             try
             {
                 var page = (Page)Activator.CreateInstance(typeof(LandingView));
-                MessagingCenter.Send<Page>(page, "MessagingCenterNavigateToPage");
+                MessagingCenter.Send<Page,string>(page, "MessagingCenterNavigateToPage", "Landing View");
             }
             catch (Exception ex)
             {

@@ -163,6 +163,7 @@ E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC.Android\obj\Debug\android\asset
 E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
 E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC.Android\bin\Debug\CoreApiPOC.Android.dll
+E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\bin\Debug\CoreApiPOC.dll
 bin\Debug\Acr.Support.Android.dll.mdb
 bin\Debug\Acr.UserDialogs.dll.mdb
 bin\Debug\CoreApiPOC.dll.mdb

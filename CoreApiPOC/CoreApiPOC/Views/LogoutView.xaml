@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CoreApiPOC.Views.LogoutView"
+             xmlns:viewModelBase="clr-namespace:CoreApiPOC.ViewModels.Base;assembly=CoreApiPOC"
+             xmlns:converters="clr-namespace:CoreApiPOC.Converters;assembly=CoreApiPOC"
+             xmlns:behaviors="clr-namespace:CoreApiPOC.Behaviors;assembly=CoreApiPOC"
+			 viewModelBase:ViewModelLocator.AutoWireViewModel="true" 
+             NavigationPage.HasBackButton="True" 
+             BackgroundColor="#FFFFFF">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

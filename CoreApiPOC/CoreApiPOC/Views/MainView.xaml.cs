@@ -15,9 +15,9 @@ namespace CoreApiPOC.Views
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
             NavigationPage.SetHasBackButton(this, false);
 
-            MessagingCenter.Subscribe<Page>(this, "MessagingCenterNavigateToPage", (page) =>
+            MessagingCenter.Subscribe<Page, string>(this, "MessagingCenterNavigateToPage", (page, title) =>
             {
-                NavigateToPage(page);
+                NavigateToPage(page, title);
             });
         }
 

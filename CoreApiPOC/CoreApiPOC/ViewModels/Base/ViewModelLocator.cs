@@ -40,6 +40,7 @@
             builder.RegisterType<MasterViewModel>();
             builder.RegisterType<LandingViewModel>();
             builder.RegisterType<EditUserInfoViewModel>();
+            builder.RegisterType<LogoutViewModel>();
 
 
             // Services

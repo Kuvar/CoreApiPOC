@@ -39,7 +39,6 @@ E:\Projects\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\CoreApiPOC.Views.EditUser
 E:\Projects\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\CoreApiPOC.dll
 E:\Projects\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\CoreApiPOC.pdb
 E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\CoreApiPOC.csproj.App.config
-E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\CoreApiPOC.csprojResolveAssemblyReference.cache
 E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\CoreApiPOC.csproj.CoreCompileInputs.cache
 E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\CoreApiPOC.MainPage.xaml.g.cs
 E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\CoreApiPOC.App.xaml.g.cs
@@ -79,3 +78,5 @@ E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\bin\Debug\Xamarin.Forms.Core.xm
 E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\bin\Debug\Xamarin.Forms.Xaml.pdb
 E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\bin\Debug\Xamarin.Forms.Xaml.xml
 E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\CoreApiPOC.Views.LogoutView.xaml.g.cs
+E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\CoreApiPOC.Views.ChangePasswordView.xaml.g.cs
+E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\obj\Debug\CoreApiPOC.csprojResolveAssemblyReference.cache

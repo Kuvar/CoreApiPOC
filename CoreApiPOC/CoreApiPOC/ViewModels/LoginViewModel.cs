@@ -57,6 +57,7 @@
 
         public LoginViewModel()
         {
+            IsBusy = true;
             _userName = new ValidatableObject<string>();
             _password = new ValidatableObject<string>();
 

@@ -152,16 +152,7 @@ E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC.Android\obj\Debug\res\drawable\
 E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC.Android\obj\Debug\res\drawable\check.png
 E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC.Android\obj\Debug\R.cs.flag
 E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC.Android\obj\Debug\uploadflags.txt
-E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC.Android\bin\Debug\CoreApiPOC.dll.mdb
-E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC.Android\bin\Debug\CoreApiPOC.Android.dll.mdb
-E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC.Android\obj\Debug\android\assets\Acr.Support.Android.dll.mdb
-E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC.Android\obj\Debug\android\assets\Acr.UserDialogs.dll.mdb
-E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC.Android\obj\Debug\android\assets\CoreApiPOC.Android.dll.mdb
-E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC.Android\obj\Debug\android\assets\CoreApiPOC.dll.mdb
-E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC.Android\obj\Debug\android\assets\FormsViewGroup.dll.mdb
-E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC.Android\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
-E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
-E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\bin\Debug\CoreApiPOC.dll
 E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC.Android\bin\Debug\CoreApiPOC.Android.dll
 E:\Source\Repos\CoreApiPOC\CoreApiPOC\CoreApiPOC\bin\Debug\CoreApiPOC.dll
 bin\Debug\Acr.Support.Android.dll.mdb

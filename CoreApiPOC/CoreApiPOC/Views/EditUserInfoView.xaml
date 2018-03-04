@@ -13,18 +13,12 @@
             <converters:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter" />
             <converters:InverseBooleanConverter x:Key="InverseBooleanConverter" />
 
-            <Style x:Key="TitleLabelStyle"
-                TargetType="{x:Type Label}">
-                <Setter Property="FontFamily"
-                    Value="{StaticResource MontserratRegular}" />
-                <Setter Property="FontAttributes"
-                    Value="Bold" />
-                <Setter Property="FontSize"
-                    Value="{StaticResource LargeSize}" />
-                <Setter Property="HorizontalOptions"
-                    Value="Center" />
-                <Setter Property="Margin"
-                    Value="0,0,0,5" />
+            <Style x:Key="TitleLabelStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="{StaticResource LargeSize}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Margin" Value="0,0,0,5" />
             </Style>
 
             <Style x:Key="LinkButtonLabelStyle" TargetType="{x:Type Label}"> 
@@ -34,16 +28,11 @@
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
 
-            <Style x:Key="LoginButtonStyle"
-                TargetType="{x:Type Label}">
-                <Setter Property="FontFamily"
-                    Value="{StaticResource MontserratRegular}" />
-                <Setter Property="TextColor"
-                    Value="{StaticResource WhiteColor}" />
-                <Setter Property="HorizontalOptions"
-                    Value="Center" />
-                <Setter Property="VerticalOptions"
-                    Value="Center" />
+            <Style x:Key="LoginButtonStyle" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{StaticResource MontserratRegular}" />
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>

@@ -41,7 +41,7 @@
             builder.RegisterType<LandingViewModel>();
             builder.RegisterType<EditUserInfoViewModel>();
             builder.RegisterType<LogoutViewModel>();
-
+            builder.RegisterType<ChangePasswordViewModel>();
 
             // Services
             builder.RegisterType<NavigationService>().As<INavigationService>().SingleInstance();

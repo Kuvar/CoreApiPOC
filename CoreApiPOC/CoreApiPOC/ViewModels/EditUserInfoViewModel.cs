@@ -69,31 +69,7 @@ namespace CoreApiPOC.ViewModels
             get { return _email; }
             set { _email = value; }
         }
-
-        private ValidatableObject<string> _password;
-        public ValidatableObject<string> Password
-        {
-            get
-            {
-                return _password;
-            }
-            set
-            {
-                _password = value;
-                RaisePropertyChanged(() => Password);
-            }
-        }
-
-        private ValidatableObject<string> _confirmPassword;
-        public ValidatableObject<string> ConfirmPassword
-        {
-            get { return _confirmPassword; }
-            set
-            {
-                _confirmPassword = value;
-                RaisePropertyChanged(() => ConfirmPassword);
-            }
-        }
+        
 
         public EditUserInfoViewModel()
         {
@@ -101,8 +77,6 @@ namespace CoreApiPOC.ViewModels
             _lastName = new ValidatableObject<string>();
             _userName = new ValidatableObject<string>();
             _email = new ValidatableObject<string>();
-            _password = new ValidatableObject<string>();
-            _confirmPassword = new ValidatableObject<string>();
             //GetUserInfo();
             AddValidations();
         }
@@ -142,8 +116,6 @@ namespace CoreApiPOC.ViewModels
             _userName.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Please enter username" });
             _email.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Please enter email" });
             _email.Validations.Add(new IsEmailRule<string> { ValidationMessage = "Please enter valid email" });
-            _password.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Please enter password" });
-            _confirmPassword.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Passwords don't match" });
         }
         
         private bool ValidateFirstName()
@@ -162,14 +134,6 @@ namespace CoreApiPOC.ViewModels
         {
             return _email.Validate();
         }
-        private bool ValidatePassword()
-        {
-            return _password.Validate();
-        }
-        private bool ValidateConfirmPassword()
-        {
-            return _confirmPassword.Validate();
-        }
         private bool Validate()
         {
             bool isValidFirstName = ValidateFirstName();
@@ -177,11 +141,6 @@ namespace CoreApiPOC.ViewModels
             bool isValidUser = ValidateUserName();
             bool isValidEmail = ValidateEmail();
             return isValidFirstName && isValidLastName && isValidUser && isValidEmail;
-        }
-        private void ValidateChangePassword()
-        {
-            bool isValidPassword = ValidatePassword();
-            bool isValidConfirmPassword = ValidateConfirmPassword();
         }
 
         public ICommand UpdateUserInfoCommand => new Command(async () => await UpdateUserInfoAsync());
@@ -191,8 +150,8 @@ namespace CoreApiPOC.ViewModels
         {
             try
             {
-                var page = (Page)Activator.CreateInstance(typeof(LandingView));
-                MessagingCenter.Send<Page,string>(page, "MessagingCenterNavigateToPage", "Landing View");
+                var page = (Page)Activator.CreateInstance(typeof(ChangePasswordView));
+                MessagingCenter.Send<Page,string>(page, "MessagingCenterNavigateToPage", "Change Password");
             }
             catch (Exception ex)
             {
